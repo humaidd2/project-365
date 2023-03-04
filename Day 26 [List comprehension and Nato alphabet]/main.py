@@ -28,6 +28,12 @@ alpha_dict = {row.letter: row.code for (index, row) in alphabets.iterrows()}
 print(alpha_dict)
 
 # TODO 2. Create a list of the phonetic code words from a word that the user inputs.
-user_word = input("Type a word: ").upper()
-output = [alpha_dict[word] for word in user_word]
-print(output)
+off = False
+while not off:
+    user_word = input("Type a word: ").upper()
+    try:
+        output = [alpha_dict[word] for word in user_word]
+    except KeyError:
+        output = "Sorry, only letters in the alphabet please"
+
+    print(output)
