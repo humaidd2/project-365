@@ -7,7 +7,8 @@ response = requests.get(url=url).text
 
 soup = BeautifulSoup(response, "lxml")
 title_tag = soup.select("div h3")
-print(title_tag)
+n = title_tag[0].getText()
+print(n)
 
 # with open("website.html", encoding="utf-8") as file:
 #     content = file.read()
